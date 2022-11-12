@@ -1,7 +1,23 @@
+import { useState } from "react";
+import { WelcomeHeader } from "../../components/WelcomeHeader";
+import { WelcomeMobileMenu } from "../../components/WelcomeMobileMenu";
+
 export const WelcomePage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenCloseMenu = (): void => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <h1>Welcome Talks</h1>
+      {isOpen && (
+        <WelcomeMobileMenu handleOpenCloseMenu={handleOpenCloseMenu} />
+      )}
+      <WelcomeHeader
+        isOpen={isOpen}
+        handleOpenCloseMenu={handleOpenCloseMenu}
+      />
     </>
   );
 };
