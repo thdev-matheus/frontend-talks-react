@@ -15,11 +15,17 @@ export const Container = styled.div`
 export const BoxOut = styled.div`
   width: 50%;
   height: 100vh;
+
+  position: fixed;
+  left: 0;
 `;
 
 export const BoxMenu = styled.section`
   width: 50%;
   height: 100vh;
+
+  position: fixed;
+  right: 0;
 
   display: flex;
   flex-direction: column;
